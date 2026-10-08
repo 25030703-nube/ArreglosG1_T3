@@ -39,13 +39,11 @@ namespace Arreglos.logica
             }
         }
 
-        // Método ordenar por defecto (ascendente)
         public void ordenar()
         {
             Ordenar(true);
         }
 
-        // Método ordenar (burbuja)
         public void Ordenar(bool ascendente)
         {
             for (int i = 0; i < _tope - 1; i++)
@@ -68,6 +66,26 @@ namespace Arreglos.logica
                     }
                 }
             }
+        }
+
+        public void cambiar(ref int a, ref int b)
+        {
+            int aux = a;
+            a = b;
+            b = aux;
+        }
+
+        public bool Agregar(int valor)
+        {
+            if (EstaLleno)
+            {
+                return false;
+            }
+
+            _arreglo[_tope] = valor;
+            _tope++;
+
+            return true;
         }
     }
 }
