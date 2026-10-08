@@ -110,5 +110,44 @@ namespace Arreglos.logica
 
             return true;
         }
+
+        public bool Eliminar(int posicion)
+        {
+            if (EstaVacio)
+            {
+                return false;
+            }
+
+            if (posicion < 0 || posicion >= _tope)
+            {
+                return false;
+            }
+
+            for (int i = posicion; i < _tope - 1; i++)
+            {
+                _arreglo[i] = _arreglo[i + 1];
+            }
+
+            _tope--;
+
+            return true;
+        }
+
+        public override string ToString()
+        {
+            string resultado = "";
+
+            for (int i = 0; i < _tope; i++)
+            {
+                resultado += _arreglo[i];
+
+                if (i < _tope - 1)
+                {
+                    resultado += ", ";
+                }
+            }
+
+            return resultado;
+        }
     }
 }
