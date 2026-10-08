@@ -38,5 +38,36 @@ namespace Arreglos.logica
                 _tope++;
             }
         }
+
+        // Método ordenar por defecto (ascendente)
+        public void ordenar()
+        {
+            Ordenar(true);
+        }
+
+        // Método ordenar (burbuja)
+        public void Ordenar(bool ascendente)
+        {
+            for (int i = 0; i < _tope - 1; i++)
+            {
+                for (int j = 0; j < _tope - 1 - i; j++)
+                {
+                    if (ascendente)
+                    {
+                        if (_arreglo[j] > _arreglo[j + 1])
+                        {
+                            cambiar(ref _arreglo[j], ref _arreglo[j + 1]);
+                        }
+                    }
+                    else
+                    {
+                        if (_arreglo[j] < _arreglo[j + 1])
+                        {
+                            cambiar(ref _arreglo[j], ref _arreglo[j + 1]);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
