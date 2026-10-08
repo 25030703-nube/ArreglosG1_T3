@@ -4,5 +4,39 @@ namespace Arreglos.logica
 {
     public class MiArreglo
     {
+        private int[] _arreglo;
+        private int _tope;
+
+        public MiArreglo(int n)
+        {
+            _arreglo = new int[n];
+            _tope = 0;
+        }
+
+        public int N
+        {
+            get { return _arreglo.Length; }
+        }
+
+        public bool EstaLleno
+        {
+            get { return _tope == N; }
+        }
+
+        public bool EstaVacio
+        {
+            get { return _tope == 0; }
+        }
+
+        public void Llenar(int minimo, int maximo)
+        {
+            Random random = new Random();
+
+            while (!EstaLleno)
+            {
+                _arreglo[_tope] = random.Next(minimo, maximo + 1);
+                _tope++;
+            }
+        }
     }
 }
