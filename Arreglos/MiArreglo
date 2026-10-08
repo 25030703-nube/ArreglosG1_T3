@@ -1,1 +1,8 @@
-//primer commit
+using System;
+
+namespace Arreglos.logica
+{
+    public class MiArreglo
+    {
+    }
+}
